@@ -118,33 +118,3 @@ dotsNav.addEventListener('click', e => {
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, prevBtn, nextBtn, targetIndex);
   })
-
-// reload 
-function debounce(func, delay) {
-    let timerId;
-    return function() {
-      const context = this;
-      const args = arguments;
-      clearTimeout(timerId);
-      timerId = setTimeout( function() {
-        func.apply(context, args);
-      }, delay);
-    }
-  }
-
-  window.addEventListener('orientationchange', function() {
-    currentWidth = window.innerWidth;
-  })
-
-  window.addEventListener('resize', debounce(function() {
-    console.log('start' + currentWidth);
-    if (currentWidth === window.innerWidth) {
-      console.log('middle' + currentWidth);
-      return;
-    }
-    //reload of the page
-    location.reload();
-    currentWidth = window.innerWidth;
-    console.log('end' + currentWidth);
-
-  }, 500));

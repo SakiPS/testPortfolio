@@ -132,6 +132,14 @@ function debounce(func, delay) {
   }
 
   window.addEventListener('resize', debounce(function() {
+    console.log('start' + currentWidth);
+    if (currentWidth === window.innerWidth) {
+      console.log('middle' + currentWidth);
+      return;
+    }
     //reload of the page
     location.reload();
+    currentWidth = window.innerWidth;
+    console.log('end' + currentWidth);
+
   }, 500));

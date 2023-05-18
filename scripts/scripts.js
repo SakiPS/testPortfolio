@@ -134,6 +134,7 @@ function debounce(func, delay) {
   }
 
   window.addEventListener('orientationchange', function(){
+    location.reload();
     currentWidth = window.innerWidth;
   })
 

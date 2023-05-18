@@ -138,17 +138,29 @@ function debounce(func, delay) {
   })
 
   window.addEventListener('resize', debounce(function() {
-    if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
-      return;
-    }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
-      return;
-    }else if (currentWidth === window.innerWidth) {
-      console.log('middle' + currentWidth);
+
+  if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
+    if (currentWidth === window.innerWidth) {
       return;
     }
+    location.reload();
+    currentWidth = window.innerWidth;
+    return;
+  }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
+    if (currentWidth === window.innerWidth) {
+      return;
+    }
+    location.reload();
+    currentWidth = window.innerWidth;
+    return;
+  }
+  if (currentWidth === window.innerWidth) {
+    return;
+}
+
     //reload of the page
     location.reload();
     currentWidth = window.innerWidth;
     console.log('end' + currentWidth);
 
-  }, 100));
+  }, 500));

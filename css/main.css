@@ -634,6 +634,7 @@ section#works {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    display: none;
 }
 .carouselBtn.leftBtn { left: -30px; }
 .carouselBtn.rightBtn { right: -30px; }
@@ -815,6 +816,7 @@ textarea {
         width: 60%;
         height: 500px;
     }
+    .carouselBtn { display: inline; }
     .carouselBtn.leftBtn { left: -40px; }
     .carouselBtn.rightBtn { right: -40px; }
 }

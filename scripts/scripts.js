@@ -44,6 +44,7 @@ const prevBtn = document.querySelector('.leftBtn');
 const dotsNav = document.querySelector('.carouselNav');
 const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
+var currentWidth = window.innerWidth;
 
 const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * index + 'px';

@@ -45,6 +45,7 @@ const dotsNav = document.querySelector('.carouselNav');
 const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 var currentWidth = window.innerWidth;
+let userDevice = navigator.userAgent;
 
 const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * index + 'px';
@@ -118,3 +119,36 @@ dotsNav.addEventListener('click', e => {
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, prevBtn, nextBtn, targetIndex);
   })
+
+// reload 
+function debounce(func, delay) {
+    let timerId;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timerId);
+      timerId = setTimeout( function() {
+        func.apply(context, args);
+      }, delay);
+    }
+  }
+
+  window.addEventListener('orientationchange', function(){
+    currentWidth = window.innerWidth;
+  })
+
+  window.addEventListener('resize', debounce(function() {
+    if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
+      return;
+    }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
+      return;
+    }else if (currentWidth === window.innerWidth) {
+      console.log('middle' + currentWidth);
+      return;
+    }
+    //reload of the page
+    location.reload();
+    currentWidth = window.innerWidth;
+    console.log('end' + currentWidth);
+
+  }, 100));

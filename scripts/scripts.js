@@ -44,7 +44,7 @@ const prevBtn = document.querySelector('.leftBtn');
 const dotsNav = document.querySelector('.carouselNav');
 const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
-var currentWidth = window.innerWidth;
+var currentWidth = document.documentElement.clientWidth;
 let userDevice = navigator.userAgent;
 
 const setSlidePosition = (slide, index) => {
@@ -135,33 +135,33 @@ function debounce(func, delay) {
 
   window.addEventListener('orientationchange', function(){
     location.reload();
-    currentWidth = window.innerWidth;
+    currentWidth = document.documentElement.clientWidth;;
   })
 
   window.addEventListener('resize', debounce(function() {
 
   if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
-    if (currentWidth === window.innerWidth) {
+    if (currentWidth === document.documentElement.clientWidth;) {
       return;
     }
     location.reload();
     currentWidth = window.innerWidth;
     return;
   }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
-    if (currentWidth === window.innerWidth) {
+    if (currentWidth === document.documentElement.clientWidth;) {
       return;
     }
     location.reload();
-    currentWidth = window.innerWidth;
+    currentWidth = document.documentElement.clientWidth;;
     return;
   }
-  if (currentWidth === window.innerWidth) {
+  if (currentWidth === document.documentElement.clientWidth;) {
     return;
 }
 
     //reload of the page
     location.reload();
-    currentWidth = window.innerWidth;
+    currentWidth = document.documentElement.clientWidth;;
     console.log('end' + currentWidth);
 
   }, 500));

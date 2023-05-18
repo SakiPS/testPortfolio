@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saki's Portfolio | contact</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/reset.css">   
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header>
+        <div class="navWrapper">
+            <div class="navToggleBtn">
+                <i class="fa-solid fa-bars humberger"></i>
+                <i class="fa-solid fa-xmark isClose xMark"></i>
+            </div>
+            <nav class="topNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="visualDesign.html" >Visual Design</a></li>
+                    <li><a href="webDevelopment.html">Web Development</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" class="disable">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="blackBg"></div>
+        </div>
+        <a href="../index.html" class="logo"><img class="logo" src="../images/logo.png" alt="logo"></a>
+        <h1>Contact</h1>
+    </header>
+    <main class="contactPage">
+        <form action="#" method="post" id="contact">
+            <fieldset>
+                <legend>input area</legend>  
+                <div class="formName">
+                    <label for="fullName">Your Name<span class="jp">&emsp;お名前</span></label>
+                    <input type="text" id="fullName" name="fullName"  placeholder="First name, Last name" required>
+                </div>
+                <div class="formName">
+                    <label for="email">Email<span class="jp">&emsp;メールアドレス</span></label>
+                    <input type="email" id="email" name="email" placeholder="abc@abc.com" required>
+                </div>
+
+                <div class="yourInterest">
+                    <p>What are you interested in?<span class="jp">&emsp;お問合せ内容</span></p>
+                    <div>
+                        <input type="checkbox" id="webDevCheck" name="webDevCheck">
+                        <span></span>
+                        <label for="webDevCheck">Web Development</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="webDsgnCheck" name="webDsgnCheck">
+                        <span></span>
+                        <label for="webDsgnCheck">Web Design</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="docCheck" name="docCheck">
+                        <span></span>
+                        <label for="docCheck">Document Design</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="illusCheck" name="illusCheck">
+                        <span></span>
+                        <label for="illusCheck">Illustration</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="movieCheck" name="movieCheck">
+                        <span></span>
+                        <label for="movieCheck">Movie editing</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="otherCheck" name="otherCheck">
+                        <span></span>
+                        <label for="otherCheck">Other</label>
+                    </div>
+                </div>
+
+                <div class="yourMsg">
+                    <label for="msg">Your Message<span class="jp">&emsp;メッセージ</span></label>
+                    <textarea name="message" id="msg"></textarea>
+                </div>
+            </fieldset>
+            <input class="standardBtn" type="submit" id="submit" value="submit">
+            <img src="../images/bird.png"  alt="flying bird" class="bird">
+        </form>
+    </main>
+
+    <footer>
+        <p>Copyright Saki.M 2023</p>
+    </footer>
+
+   <script src="../scripts/scripts.js"></script>
+</body>
+</html>

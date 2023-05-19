@@ -142,24 +142,30 @@ function debounce(func, delay) {
 
   if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
     if (currentWidth === document.documentElement.clientWidth) {
+      alert('resize1');
       return false;
     }
+    alert('resize2');
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     return false;
   }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
     if (currentWidth === document.documentElement.clientWidth) {
+      alert('resize3');
       return false;
     }
+    alert('resize4');
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     return false;
   }
   if (currentWidth === document.documentElement.clientWidth) {
+      alert('resize5');
     return false;
 }
 
     //reload of the page
+      alert('resize6');
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     console.log('end' + currentWidth);

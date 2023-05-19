@@ -147,7 +147,7 @@ function debounce(func, delay) {
       alert('resize1');
       return false;
     }
-    alert('resize2');
+    alert('resize2'+currentWidth);
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     return false;

@@ -142,21 +142,21 @@ function debounce(func, delay) {
 
   if(userDevice.indexOf('iPhone') > 0 || userDevice.indexOf('iPod') > 0 || userDevice.indexOf('Android') > 0 && userDevice.indexOf('Mobile') > 0) {
     if (currentWidth === document.documentElement.clientWidth) {
-      return;
+      return false;
     }
     location.reload();
     currentWidth = document.documentElement.clientWidth;
-    return;
+    return false;
   }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
     if (currentWidth === document.documentElement.clientWidth) {
-      return;
+      return false;
     }
     location.reload();
     currentWidth = document.documentElement.clientWidth;
-    return;
+    return false;
   }
   if (currentWidth === document.documentElement.clientWidth) {
-    return;
+    return false;
 }
 
     //reload of the page

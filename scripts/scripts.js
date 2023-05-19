@@ -149,7 +149,7 @@ function debounce(func, delay) {
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     return false;
-  }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0) {
+  }else if (userDevice.indexOf('iPad') > 0 || userDevice.indexOf('Android') > 0　 && ua.indexOf('Mobile') == -1) {
     if (currentWidth === document.documentElement.clientWidth) {
       alert('resize3');
       return false;

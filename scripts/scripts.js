@@ -135,7 +135,9 @@ function debounce(func, delay) {
 
   window.addEventListener('orientationchange', function(){
     location.reload();
+    alart('start'+currentWidth);
     currentWidth = document.documentElement.clientWidth;
+    alart('end'+currentWidth);
   })
 
   window.addEventListener('resize', debounce(function() {
@@ -160,12 +162,13 @@ function debounce(func, delay) {
     return false;
   }
   if (currentWidth === document.documentElement.clientWidth) {
+      alart('resize5'+currentWidth);
       alert('resize5');
     return false;
 }
 
     //reload of the page
-      alert('resize6');
+      alert('resize6'+currentWidth);
     location.reload();
     currentWidth = document.documentElement.clientWidth;
     console.log('end' + currentWidth);
